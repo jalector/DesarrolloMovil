@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/contact"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="Contacto" />
+
+    <item
+        android:id="@+id/edit_contact"
+        android:icon="@drawable/ic_mode_edit_black_24dp"
+        android:title="@string/title_dashboard" />
+
+</menu>

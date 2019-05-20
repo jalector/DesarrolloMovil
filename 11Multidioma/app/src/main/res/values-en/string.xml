@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">11Multidioma</string>
+    <string name="Siguiente">Next</string>
+    <string name="Atras">Before</string>
+    <string name="Buscar">Search</string>
+    <string name="Español">Spanish</string>
+    <string name="Información">Information</string>
+</resources>
