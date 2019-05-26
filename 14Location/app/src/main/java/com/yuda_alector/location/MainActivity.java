@@ -35,28 +35,28 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void getLocation (View view){
-        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-        } else {
-            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            } else {
+                ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
 
-            this.fusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
-                @Override
-                public void onSuccess(Location location) {
+                this.fusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location location) {
 
-                    if (location != null) {
-                        tv_latitude.setText(Double.toString(location.getLatitude()));
-                        tv_longitude.setText(Double.toString(location.getLongitude()));
+                        if (location != null) {
+                            tv_latitude.setText(Double.toString(location.getLatitude()));
+                            tv_longitude.setText(Double.toString(location.getLongitude()));
 
-                        Toast.makeText(getApplicationContext(), location.getLatitude() + " --- " + location.getLatitude() , Toast.LENGTH_LONG).show();
-                    }else {
-                        Toast.makeText(getApplicationContext(), "No tenemos ubicación ", Toast.LENGTH_LONG).show();
-                        tv_latitude.setText("Nel");
-                        tv_longitude.setText("No hay");
+                            Toast.makeText(getApplicationContext(), location.getLatitude() + " --- " + location.getLatitude() , Toast.LENGTH_LONG).show();
+                        }else {
+                            Toast.makeText(getApplicationContext(), "No tenemos ubicación ", Toast.LENGTH_LONG).show();
+                            tv_latitude.setText("Nel");
+                            tv_longitude.setText("No hay");
+                        }
                     }
-                }
-            });
-        }
+                });
+            }
     }
 
 }
